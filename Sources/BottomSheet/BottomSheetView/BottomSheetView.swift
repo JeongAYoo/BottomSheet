@@ -58,13 +58,14 @@ internal struct BottomSheetView<HContent: View, MContent: View>: View {
                     // Full screen background for aligning and used by `backgroundBlur` and `tapToDismiss`
                     self.fullScreenBackground(with: geometry)
                     
-                    Color.black.opacity(0.7)
-                      // Make the background tap-able for `tapToDismiss`
-                      .contentShape(Rectangle())
-//                      .allowsHitTesting(self.configuration.isTapToDismissEnabled)
-                      .onTapGesture(perform: self.tapToDismissAction)
-                      // Make the background transition via opacity
-                      .transition(.opacity)
+                    Rectangle()
+                        .foregroundColor(Color.black.opacity(0.7))
+                        // Make the background tap-able for `tapToDismiss`
+//                      .contentShape(Rectangle())
+                        .allowsHitTesting(self.configuration.isTapToDismissEnabled)
+                        .onTapGesture(perform: self.tapToDismissAction)
+                        // Make the background transition via opacity
+                        .transition(.opacity)
                   
                     // The BottomSheet itself
                     self.bottomSheet(with: geometry)
