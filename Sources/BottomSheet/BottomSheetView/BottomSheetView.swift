@@ -61,7 +61,7 @@ internal struct BottomSheetView<HContent: View, MContent: View>: View {
                     Color.black.opacity(0.7)
                       // Make the background tap-able for `tapToDismiss`
                       .contentShape(Rectangle())
-                      .allowsHitTesting(self.configuration.isTapToDismissEnabled)
+//                      .allowsHitTesting(self.configuration.isTapToDismissEnabled)
                       .onTapGesture(perform: self.tapToDismissAction)
                       // Make the background transition via opacity
                       .transition(.opacity)
