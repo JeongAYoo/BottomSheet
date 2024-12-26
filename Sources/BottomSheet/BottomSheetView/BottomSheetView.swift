@@ -59,12 +59,6 @@ internal struct BottomSheetView<HContent: View, MContent: View>: View {
                     self.fullScreenBackground(with: geometry)
                     
                     Color.black.opacity(0.7)
-                      // Make the background fill the whole screen including safe area
-                      .frame(
-                        maxWidth: .infinity,
-                        maxHeight: .infinity
-                      )
-                      .edgesIgnoringSafeArea(.all)
                       // Make the background tap-able for `tapToDismiss`
                       .contentShape(Rectangle())
                       .allowsHitTesting(self.configuration.isTapToDismissEnabled)
